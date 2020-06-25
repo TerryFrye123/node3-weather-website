@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.location.name === null) {
             callback(`No such address found for "${request.query}" !`, undefined);
         } else {
-            callback(undefined,`It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out.`);
+            callback(undefined,`It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out. The wind speed is ${body.current.wind_speed} from ${body.current.wind_dir}.`);
         }
     });
 }
